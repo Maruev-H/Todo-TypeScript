@@ -1,0 +1,41 @@
+.Input {
+  padding: 76px 0 0 0;
+  &__rocket {
+    margin: 0 8px 15px 0;
+  }
+  &__logic{
+    display: flex;
+    margin: 35px auto 0;
+    max-width: 736px;
+    justify-content: space-between;
+  }
+  input {
+    color: white;
+    height: 54px;
+    width: 603px;
+    border-radius: 8px;
+    padding: 16px;
+    background: rgba(38, 38, 38, 1);
+    border: none;
+  }
+}
+.btn-primary {
+  background: rgba(30, 111, 159, 1);
+  height: 54px;
+  margin: 0 0 0 8px;
+  border: none;
+}
+.spinner{
+  display: inline-block;
+  width: 20px;
+  height: 24px;
+  animation: rotete infinite 0.5s linear;
+}
+@keyframes rotete {
+  from{
+    transform: rotate(0deg) 
+  }
+  to{
+    transform: rotate(360deg)
+  }
+}
