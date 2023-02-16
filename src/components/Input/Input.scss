@@ -11,6 +11,7 @@
   }
   form{
     width: 100%;
+    display: flex;
   }
   input {
     color: white;
@@ -23,6 +24,8 @@
   }
 }
 .btn-primary {
+  display: flex;
+  align-items: center;
   background: rgba(30, 111, 159, 1);
   height: 54px;
   margin: 0 0 0 8px;
@@ -31,8 +34,13 @@
 .spinner{
   display: inline-block;
   width: 20px;
-  height: 24px;
+  height: 20px;
   animation: rotete infinite 0.5s linear;
+  svg{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 }
 @keyframes rotete {
   from{

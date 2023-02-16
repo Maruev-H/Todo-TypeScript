@@ -23,7 +23,7 @@ export default function Input() {
   };
 
   function handleClickAdd() {
-    if (search.length) {
+    if (search.length && !isLoadingAddTodo) {
       dispatch(addTodo(search));
       setSearch("");
     }
@@ -35,7 +35,7 @@ export default function Input() {
         <img src={Logo1} alt="" />
       </div>
       <div className="Input__logic">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
         <input
           value={search}
           onChange={handleChange}
@@ -45,6 +45,7 @@ export default function Input() {
           type="button"
           className="btn btn-primary"
           onClick={handleClickAdd}
+          disabled={isLoadingAddTodo}
         >
           Добавить{" "}
           {isLoadingAddTodo ? (
