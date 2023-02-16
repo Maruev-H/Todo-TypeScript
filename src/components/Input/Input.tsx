@@ -17,9 +17,13 @@ export default function Input() {
     setSearch(event.target.value);
   }
 
-  function handleClickAdd(event: React.FormEvent) {
+  function handleSubmit (event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    handleClickAdd();
+  };
+
+  function handleClickAdd() {
     if (search.length) {
-      event.preventDefault();
       dispatch(addTodo(search));
       setSearch("");
     }
@@ -31,6 +35,7 @@ export default function Input() {
         <img src={Logo1} alt="" />
       </div>
       <div className="Input__logic">
+        <form onSubmit={handleSubmit}>
         <input
           value={search}
           onChange={handleChange}
@@ -50,6 +55,7 @@ export default function Input() {
             <AiOutlinePlusCircle />
           )}
         </button>
+        </form>
       </div>
     </div>
   );
