@@ -81,7 +81,7 @@ export const todoSlice = createSlice({
         });
       }
     );
-    builder.addCase(changeTodo.rejected, (state) => {
+    builder.addCase(changeTodo.rejected, () => {
       alert('Ошибка');
     });
   },
