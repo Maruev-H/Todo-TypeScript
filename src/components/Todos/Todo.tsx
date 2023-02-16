@@ -12,7 +12,6 @@ const Todo: React.FC<ITodos> = ({ _id, title, completed, created_at}) => {
 
   const handleDelete = () => {
     dispatch(deleteTodo(_id));
-    console.log(isLoadingDeleteTodo)
   };
 
   const toDoCompleted = () =>{
@@ -46,10 +45,10 @@ const Todo: React.FC<ITodos> = ({ _id, title, completed, created_at}) => {
           aria-label="..."
           checked={completed}
           onChange={toDoCompleted}
-          disabled={isLoadingDeleteTodo !== ''}
         />
         <p className={completed ? "line-through" : ''}> {title} <span> {CreatedAt()}</span></p>
-        <button onClick={handleDelete}>
+        <button onClick={handleDelete}
+        disabled={isLoadingDeleteTodo !== _id && isLoadingDeleteTodo.length !== 0}>
           {isLoadingDeleteTodo === _id ? (
             <span className="spinner">
             <RiLoader4Fill />

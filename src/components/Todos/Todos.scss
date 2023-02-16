@@ -31,6 +31,9 @@
       background: none;
       border: none;
     }
+    button:disabled {
+      color: #1b1c1e;
+    }
   }
   p {
     width: 80%;
