@@ -12,6 +12,7 @@ const Todo: React.FC<ITodos> = ({ _id, title, completed, created_at}) => {
 
   const handleDelete = () => {
     dispatch(deleteTodo(_id));
+    console.log(isLoadingDeleteTodo)
   };
 
   const toDoCompleted = () =>{
@@ -23,14 +24,14 @@ const Todo: React.FC<ITodos> = ({ _id, title, completed, created_at}) => {
 
     if( a > 24){ 
       a = Math.ceil(a / 24)
-      return `${a} дней назад`
+      return `${a} ${a === 1? 'день' : a > 1 || a > 5? "дня" : "дней"} назад`
     }
 
     if(a >= 60){
       a = Math.ceil(a / 60)
-      return `${a} часов назад`
+      return `${a} ${a === 1? 'час' : a > 1 || a > 5? "часа" : "часов"} назад`
     }else{
-      return `${a} минут назад`
+      return `${a} ${a === 1? 'минуту' : a > 1 || a > 5? "минуты" : "минут"} назад`
     }
   }
 
@@ -45,6 +46,7 @@ const Todo: React.FC<ITodos> = ({ _id, title, completed, created_at}) => {
           aria-label="..."
           checked={completed}
           onChange={toDoCompleted}
+          disabled={isLoadingDeleteTodo !== ''}
         />
         <p className={completed ? "line-through" : ''}> {title} <span> {CreatedAt()}</span></p>
         <button onClick={handleDelete}>

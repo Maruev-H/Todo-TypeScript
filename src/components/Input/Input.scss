@@ -9,10 +9,13 @@
     max-width: 736px;
     justify-content: space-between;
   }
+  form{
+    width: 100%;
+  }
   input {
     color: white;
     height: 54px;
-    width: 603px;
+    width: 603 / 736 * 100%;
     border-radius: 8px;
     padding: 16px;
     background: rgba(38, 38, 38, 1);
