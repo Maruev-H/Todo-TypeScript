@@ -13,13 +13,3 @@ export type todoState = {
   isLoadingDeleteTodo: string
 }
 
-export type IAddTodos = {
-  method: string;
-  body: ITodos[]
-}
-
-
- export interface RootInterfaseState {
-  todos: ITodos[];
-  
-}

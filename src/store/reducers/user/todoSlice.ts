@@ -88,3 +88,5 @@ export const todoSlice = createSlice({
 });
 
 export default todoSlice.reducer;
+
+// how to use array map 

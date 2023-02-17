@@ -1,5 +1,5 @@
 import "./App.scss";
-import Input from "./components/Input/Input";
+import Addform from "./components/Input/Addform";
 import Todos from "./components/Todos/Todos";
 
 
@@ -7,7 +7,7 @@ function App() {
   
   return (
     <div className="App">
-      <Input />
+      <Addform />
       <Todos />
     </div>
   );

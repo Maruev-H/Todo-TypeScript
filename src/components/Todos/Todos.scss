@@ -19,7 +19,7 @@
     .line-through {
       text-decoration: line-through;
       span {
-        display: none;
+        opacity: 0;
       }
     }
     .form-check-input:checked[type="checkbox"] {

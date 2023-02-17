@@ -1,7 +1,6 @@
 import { createAsyncThunk} from '@reduxjs/toolkit';
+import { baseURL } from '../../../types/api';
 import { ITodos } from "../../../types/ITodos";
-
-export const baseURL = "https://unicode-todo.onrender.com";
 
 
 // Получение Задач
@@ -15,7 +14,7 @@ export const getTodos = createAsyncThunk("users/upload", async function () {
 export const addTodo = createAsyncThunk(
     "todos/add", 
     async function (title: string) {
-        const res = await fetch("https://unicode-todo.onrender.com/todos", {
+        const res = await fetch(`${baseURL}/todos`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -31,7 +30,7 @@ export const addTodo = createAsyncThunk(
 export const deleteTodo = createAsyncThunk<string, string>(
   "todos/delete",
   async function (_id: string, ) {
-    await fetch(`https://unicode-todo.onrender.com/todos/${_id}`, {
+    await fetch(`${baseURL}/todos/${_id}`, {
       method: "DELETE",
     });
     return _id;
@@ -42,7 +41,7 @@ export const deleteTodo = createAsyncThunk<string, string>(
 export const changeTodo = createAsyncThunk<ITodos, {_id: string; completed: boolean}>(
   "todos/patch",
   async function ({_id, completed}) {
-    const res = await fetch(`https://unicode-todo.onrender.com/todos/${_id}`, {
+    const res = await fetch(`${baseURL}/todos/${_id}`, {
       method: 'PATCH',
       body: JSON.stringify({
         completed: !completed,

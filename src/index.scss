@@ -6,9 +6,9 @@
 body{
   margin: 0;
   padding: 0;
+  min-height: 100vh;
   background: linear-gradient(
     rgba(13, 13, 13, 1) 200px,
     #1d1c1c 200px 100%,
   );
-  min-height: 100vh;
 }

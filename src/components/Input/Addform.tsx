@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Input.scss";
+import "./Addform.scss";
 import Logo from "../../pictures/byunicode1.png";
 import Logo1 from "../../pictures/byunicode.png";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
@@ -7,7 +7,7 @@ import { addTodo } from "../../store/reducers/user/todoAction";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { RiLoader4Fill } from "react-icons/ri";
 
-export default function Input() {
+export default function Addform() {
 
   const [search, setSearch] = useState("");
   const dispatch = useAppDispatch();

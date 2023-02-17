@@ -22,17 +22,17 @@ const Todo: React.FC<ITodos> = ({ _id, title, completed, created_at}) => {
     let a: number =  Math.ceil((Date.now() - created_at) / 60000)
 
     if(a <= 1){
-      return "прямо сейчас"
+      return "меньше минуты назад"
     }
     if( a >= 24*60){ 
-      a = Math.floor(a / 24)
-      return `${a} ${a === 1? 'день' : a > 1 || a > 5? "дня" : "дней"} назад`
+      a = Math.ceil(a / 24)
+      return `${a} ${a === 1? 'день' : (a > 1 && a > 5)? "дня" : "дней"} назад`
     }
     if(a >= 60){
-      a = Math.floor(a / 60)
-      return `${a} ${a === 1? 'час' : a > 1 || a > 5? "часа" : "часов"} назад`
+      a = Math.ceil(a / 60)
+      return `${a} ${a === 1? 'час' : (a > 1 && a > 5)? "часа" : "часов"} назад`
     }else{
-      return `${a} ${a === 1? 'минуту' : a > 1 || a > 5? "минут" : "минуты"} назад`
+      return `${a} ${a ===  1? 'минуту' : (a > 1 && a < 5)? "минуты" : "минут"} назад`
     }
   }
 
