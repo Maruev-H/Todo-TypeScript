@@ -28,6 +28,7 @@ export default function Addform() {
       setSearch("");
     }
   }
+
   return (
     <div className="Input">
       <div className="Inupt__logo">
@@ -37,10 +38,11 @@ export default function Addform() {
       <div className="Input__logic">
         <form onSubmit={handleSubmit} >
         <input
+        className="input"
           value={search}
           onChange={handleChange}
-          placeholder="Что вы планируете сделать?"
         />
+        <label className="label">Что вы планируете сделать?</label>
         <button
           type="button"
           className="btn btn-primary"

@@ -2,6 +2,7 @@
   margin: auto;
   max-width: 736px;
   .Todo {
+    position: relative;
     margin: 12px 0 0 0;
     display: flex;
     width: 100%;
@@ -10,36 +11,56 @@
     border-radius: 8px;
     padding: 16px;
     justify-content: space-between;
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: white;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      top: -2px;
+      left: -2px;
+      z-index: -1;
+      border-radius: 8px;
+      background: linear-gradient(90deg, rgba(21,226,255,1) 17%, rgba(184,17,51,0.9893207282913166) 53%, rgba(0,212,255,1) 88%);
+      background-size: 100%;
+      animation: back 10s infinite linear;
+    }
     #checkboxNoLabel {
       border-radius: 50%;
       border: 1px solid #0d6efd;
       --bs-form-check-bg: linear-gradient(0deg, #333333, #333333),
         linear-gradient(0deg, #262626, #262626);
     }
+
     .line-through {
       text-decoration: line-through;
       span {
         opacity: 0;
       }
     }
+
     .form-check-input:checked[type="checkbox"] {
       --bs-form-check-bg: linear-gradient(0deg, #333333, #333333),
         linear-gradient(0deg, #262626, #262626);
     }
+
     button {
       color: white;
       background: none;
       border: none;
     }
+
     button:disabled {
       color: #1b1c1e;
     }
   }
+
   p {
     width: 80%;
     text-align: left;
     max-width: 100%;
     margin: 0;
+
     span {
       font-size: 8px;
       font-weight: 400;
@@ -48,10 +69,12 @@
     }
   }
 }
+
 .Info {
   display: flex;
   justify-content: space-between;
   margin: 65px auto 25px;
+
   div:nth-of-type(1) {
     span {
       color: rgba(78, 168, 222, 1);
@@ -62,6 +85,7 @@
       color: rgba(130, 132, 250, 1);
     }
   }
+
   .circle {
     display: inline-block;
     border-radius: 999px;
@@ -74,15 +98,16 @@
   border-radius: 10px;
   border-top: 2px solid rgb(38, 38, 38);
   min-height: 50px;
-  img{
+
+  img {
     margin: 89px 0 16px;
   }
+
   h1 {
     font-size: 16px;
     font-weight: 700;
     line-height: 22px;
-    color:rgba(128, 128, 128, 1);
-    ;
+    color: rgba(128, 128, 128, 1);
   }
 }
 
@@ -139,5 +164,35 @@
 
   100% {
     transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+  }
+}
+
+@keyframes back {
+  0% {
+    background-position-x: 0%;
+  }
+  12% {
+    background-position-x: -150px;
+  }
+  25% {
+    background-position-x: -300px;
+  }
+  37% {
+    background-position-x: -150px;
+  }
+  50% {
+    background-position-x: 0px;
+  }
+  62% {
+    background-position-x: 150px;
+  }
+  75% {
+    background-position-x: 300px;
+  }
+  87% {
+    background-position-x: 150px;
+  }
+  100% {
+    background-position-x: 0px;
   }
 }

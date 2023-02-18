@@ -30,7 +30,7 @@ const Todo: React.FC<ITodos> = ({ _id, title, completed, created_at}) => {
     }
     if(a >= 60){
       a = Math.ceil(a / 60)
-      return `${a} ${a === 1? 'час' : (a > 1 && a > 5)? "часа" : "часов"} назад`
+      return `${a} ${a === 1? 'час' : (a > 1 && a < 5)? "часа" : "часов"} назад`
     }else{
       return `${a} ${a ===  1? 'минуту' : (a > 1 && a < 5)? "минуты" : "минут"} назад`
     }
