@@ -1,5 +1,5 @@
 import "./App.scss";
-import Addform from "./components/Input/Addform";
+import Addform from "./components/AddForm/Addform";
 import Todos from "./components/Todos/Todos";
 
 

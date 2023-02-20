@@ -38,7 +38,7 @@ export default function Addform() {
       <div className="Input__logic">
         <form onSubmit={handleSubmit} >
         <input
-        className="input"
+        className={`input ${search.length ? 'input1' : ''}`}
           value={search}
           onChange={handleChange}
         />

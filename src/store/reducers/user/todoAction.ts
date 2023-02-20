@@ -1,5 +1,5 @@
 import { createAsyncThunk} from '@reduxjs/toolkit';
-import { baseURL } from '../../../types/api';
+import { baseURL } from '../../../api/api';
 import { ITodos } from "../../../types/ITodos";
 
 

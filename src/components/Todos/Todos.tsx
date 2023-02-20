@@ -6,14 +6,13 @@ import Todo from "./Todo";
 import Cliboard from "../../pictures/Clipboard.png";
 
 export default function Todos() {
-
   const dispatch = useAppDispatch();
   const { todos, isLoading } = useAppSelector((state) => state.todos);
 
   useEffect(() => {
     dispatch(getTodos());
   }, [dispatch]);
-
+  
   if (isLoading) {
     return (
       <div className="Loading">

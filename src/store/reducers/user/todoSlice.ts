@@ -39,7 +39,7 @@ export const todoSlice = createSlice({
     builder.addCase(
       addTodo.fulfilled,
       (state, action: PayloadAction<ITodos>) => {
-        state.todos.push(action.payload);
+        state.todos.unshift(action.payload);
         state.isLoadingAddTodo = false;
       }
     );
